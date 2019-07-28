@@ -56,7 +56,7 @@ def Main():
         print("Logging out!!")
         exit(0)
     else:
-        input("Wrong choice!!\nPress any key to go back to homepage ")
+        input("Wrong choice!!\nPress enter to go back to homepage ")
         Main()
 
 
@@ -103,7 +103,7 @@ def UpdateItem():
         Beverages += [dish]
         Beverages += [cost]
     print("Successfully added elements:\n")
-    input("Press any key to go back to homepage ")
+    input("Press enter to go back to homepage ")
     Main()
 
 
@@ -172,9 +172,9 @@ def DeleteItem():
                 del Beverages[i]
                 break
     else:
-        input("Wrone choice!!\nPress any key to go back.")
+        input("Wrong choice!!\nPress enter to go back.")
         Main()
-    input("Item deleted Successfully\nPress any key to go back")
+    input("Item deleted Successfully\nPress enter to go back")
     Main()
 
 
@@ -313,7 +313,7 @@ def DeleteOrder():
             break
     data = (ch - 1)*3
     if ch > int(len(order)/3):
-        print("No Data found! Try agian.")
+        input("No Data found! Press enter to try again.")
         DeleteOrder()
     for i in range(len(order)):
         if data == i:
@@ -327,7 +327,7 @@ def DeleteOrder():
                     else:
                         break
                 if ch1 > order[i + 2]:
-                    print("Can't remove more than bought try again")
+                    input("Can't remove more than bought. press enter to try again")
                     DeleteOrder()
                 elif ch1 == order[i + 2]:
                     del order[i]
@@ -381,17 +381,13 @@ def receipt():
                 else:
                     print("invalid input!!! Try again")
                     continue
-
         if ch1 == 1:
             DeleteOrder()
         elif ch1 == 2:
             Order()
         elif ch1 == 3:
             order.clear()
-            input("Order cancelled.\nPress any key to contineu. ")
-            Main()
-        else:
-            print("Wrong Choice!! Terminating")
+            input("Order cancelled.\nPress enter to continue. ")
             Main()
     else:
         ch = input("Do you want to take another order? ")
@@ -447,9 +443,7 @@ def Display():
             for i in range(len(Beverages)):
                 if i % 2 == 0:
                     print(Beverages[i], "\t\t$", Beverages[i + 1])
-        else:
-            input("Wrong Choice!!\nPress any key to select again. ")
-        loop = input("Do you want to see other items? ")
+        loop = input("Do you want to see other items ? ")
         if loop == 'y' or loop == "yes":
             pass
         else:
